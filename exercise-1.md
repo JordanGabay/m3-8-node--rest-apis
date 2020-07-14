@@ -12,8 +12,38 @@ Write out each endpoint, its method, and brief description of waht it should do.
 
 | endpoint | method | Description            |
 | -------- | ------ | ---------------------- |
-| `/test`  | `GET`  | It is a test endpoint. |
+| `/test`, `/stock`  | `GET`  | It is a test endpoint. |
+
 
 _This activity is more about the discussion in how to best organize data endpoints. There will not be any coding._
 
 ## Your Answer
+
+| STOCK endpoints | method | Description |
+| -------- | ------ | ---------------------- |
+| `/stock`  | `GET`  | Retrieve stock list. |
+| `/stock/:id`  | `GET`  | Retrieve specific stock item by ID. |
+| `/stock`  | `POST`  | Creates a new stock resource. |
+| `/stock/:id`  | `PUT`  | Update specific stock resource. Ex: reduce quantity. |
+| `/stock/:id`  | `DELETE`  | Delete specific resource. |
+| CUSTOMER endpoints | method | Description |
+| -------- | ------ | ---------------------- |
+| `/customer`  | `GET`  | Retrieve customer list. |
+| `/customer/:id`  | `GET`  | Retrieve specific customer by ID. |
+| `/customer`  | `POST`  | Creates a new customer. |
+| `/customer/:id`  | `PUT`  | Update specific customer. Ex: update email. |
+| `/customer/:id`  | `DELETE`  | Delete specific customer. |
+| SEAT endpoints | method | Description |
+| -------- | ------ | ---------------------- |
+| `/seat`  | `GET`  | Retrieve seating list. |
+| `/seat/:id`  | `GET`  | Retrieve specific seat by ID. |
+| `/seat`  | `POST`  | Creates a new seat. |
+| `/seat/:id`  | `PUT`  | Update specific seat. Ex: isOccupied = true. |
+| `/seat/:id`  | `DELETE`  | Delete specific seat. |
+| ORDER endpoints | method | Description |
+| -------- | ------ | ---------------------- |
+| `/order`  | `GET`  | Retrieve order list. |
+| `/order/:id`  | `GET`  | Retrieve specific order by ID. |
+| `/order`  | `POST`  | Creates a new order. |
+| `/order/:id`  | `PUT`  | Update specific order. |
+| `/order/:id`  | `DELETE`  | Delete specific order. |
