@@ -8,6 +8,10 @@ const {
   handleRoot, getHandleClient, getHandleClients, postHandleClient, deleteHandleClient, errorPage
 } = require('./handlers/clientHandlers')
 
+const {
+  hangmanTester, hangmanTest, hangRandomWord, hangGuessLetter, handleGuessLetter2, 
+} = require('./handlers/hangmanHandlers')
+
 express()
   .use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,8 +35,14 @@ express()
   .get('/clients/:id', getHandleClients) // allows you to put id into the url to search for specific client
   .post('/clients/:email', postHandleClient) // shows an id when you put the email
   .delete('/clients/:id', deleteHandleClient) // deletes last client from the list
-  .get('*', errorPage) // Created an error page if user goes off track 
+  
 
   // Hangman Handlers
+
+  .get('/hangman/test', hangmanTester)
+  .get('/hangman/words', hangRandomWord)
+  .get('/hangman/words/:id', hangmanTest)
+  .get('/hangman/guess/:id/:letter', handleGuessLetter2)
+  .get('*', errorPage) // Created an error page if user goes off track 
 
   .listen(8000, () => console.log(`Listening on port 8000`));
